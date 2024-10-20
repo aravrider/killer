@@ -4,8 +4,8 @@ from pytube import YouTube
 from twilio.rest import Client
 
 def send_email():
-    my_mail = "aravrider@gmail.com"  # Replace with your email
-    passcode = "hibjljyoybtatmuz"     # Replace with your app password or Gmail password
+    my_mail = ""  # Replace with your email
+    passcode = ""     # Replace with your app password or Gmail password
 
     # Set up the SMTP server
     connection = smtplib.SMTP("smtp.gmail.com", 587)
@@ -24,8 +24,8 @@ def send_email():
 
 def send_sms():
     # Your Twilio Account SID and Auth Token
-    account_sid = 'AC02f1ee4617c79b392003d119597755ad'  # Replace with your Twilio Account SID
-    auth_token = '69aa4ee8e7a8e66ca855637c5bb2397a'      # Replace with your Twilio Auth Token
+    account_sid = ''  # Replace with your Twilio Account SID
+    auth_token = ''      # Replace with your Twilio Auth Token
 
     # Create a Twilio client
     client = Client(account_sid, auth_token)
@@ -33,8 +33,8 @@ def send_sms():
     # Send a message
     try:
         message = client.messages.create(
-            to='+919709366634',           # Destination phone number
-            from_='+15203895446',        # Your Twilio phone number
+            to='',           # Destination phone number
+            from_='',        # Your Twilio phone number
             body='Hello, this is a test message!'
         )
         print("SMS sent successfully:", message.sid)
@@ -43,7 +43,7 @@ def send_sms():
 
 def send_whatsapp_message():
     try:
-        pywhatkit.sendwhatmsg("+918235068566", "Geeks For Geeks!")  # Set time (hour, minutes)
+        pywhatkit.sendwhatmsg("", "Geeks For Geeks!")  # Set time (hour, minutes)
         print("WhatsApp message scheduled successfully.")
     except Exception as e:
         print("Something went wrong while sending WhatsApp message:", e)
